@@ -1,0 +1,17 @@
+.details-section{
+  padding-bottom: 1rem;
+
+    .form-wrapper{
+        margin-top: 1rem;
+        background-color: $color-white;
+    }
+    form{
+        width:100%;
+        max-width: 350px;
+
+        button{
+            padding-top: .8rem;
+            padding-bottom: .8rem;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.button-fill {
+    @include reset-button;
+    color: $color-white;
+    background-color: $color-primary;
+    padding: .5rem 3rem;
+    font-size: 1rem;
+}
+.button-fill:hover{
+    background-color: $color-primary-light;
+}
+.button-fill:disabled,
+.button-fill[disabled]{
+    background-color: $color-primary-light;
+    cursor: progress;
+}
+
+.button-outline {
+    @include reset-button;
+    color: $color-primary;
+    background-color: $color-white;
+    border: solid $color-gray 2px;
+    padding: .5rem 3rem;
+    font-size: 1rem;
+}
+.button-outline:hover{
+    background-color: $color-gray-light;
+}
+.button-outline:disabled,
+.button-outline[disabled]{
+    color: $color-primary-light;
+    border-color: $color-gray;
+    cursor: not-allowed;
+}
+
+.button-icon {
+    @include reset-button;
+
+    color: $color-primary;
+    background-color: #ffffff00;
+    border: none;
+    padding: .5rem 0;
+    margin: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.button-icon:disabled,
+.button-icon[disabled]{
+    color: $color-primary-light;
+    cursor: not-allowed;
+}
+
+.button-no-style{
+    @include reset-button;
+    text-align: start;
+}

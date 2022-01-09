@@ -1,0 +1,142 @@
+
+.orders-overview {
+    flex-grow: 1;
+    justify-content: space-between;
+
+    margin: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+.order-cards {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    margin-top: 1rem;
+    padding: 2rem 1rem;
+    justify-content: center;
+
+    hr {
+        background-color: $color-gray;
+    }
+
+    .card-item {
+        flex-grow: 1;
+        background: #fff;
+        border-radius: 2px;
+        margin: 1rem;
+
+        position: relative;
+        border: solid 1px $color-gray;
+
+        //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+        .status {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .5rem 1rem;
+
+            color: darkorange;
+            background-color: $color-gray-light;
+        }
+
+        .overview {
+            margin: 2rem;
+            margin-bottom: 1rem;
+
+            .heading {
+                font-size: 2rem;
+                font-weight: bold;
+                color: $color-primary-light;
+            }
+
+            span {
+                font-size: .9rem;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin: 8px;
+
+            button + button {
+                margin-left: 8px;
+            }
+
+            button {
+                //flex-grow: .4;
+                border-width: 1px;
+                font-size: .9rem;
+            }
+
+            .cancel {
+                color: white;
+                background-color: #ff4848;
+            }
+        }
+    }
+
+    .no-orders {
+        h3 {
+            margin: unset;
+        }
+
+        .button-fill {
+            font-weight: bold;
+        }
+    }
+}
+
+.order-item-wrapper {
+    margin-top: 1rem;
+    padding: 2.5rem;
+    background-color: $color-white;
+}
+
+.order-details {
+
+    .heading {
+        margin: 1rem 0;
+    }
+
+    .order-list {
+        border: solid 2px $color-gray;
+        padding: 1rem 1rem;
+
+        .separator-horizontal {
+            background-color: $color-gray;
+        }
+
+        .products {
+            padding-bottom: 1.5rem;
+
+            .heading {
+                margin: unset;
+                padding-bottom: 1rem;
+                border-bottom: $color-gray solid 2px;
+            }
+
+            .product-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p {
+                    max-width: 80%;
+                }
+            }
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .cancel {
+        color: white;
+        background-color: #ff4848;
+        font-size: .9rem;
+    }
+}

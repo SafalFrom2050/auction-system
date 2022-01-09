@@ -1,0 +1,66 @@
+.notifications-section {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 1rem;
+        padding: 2rem;
+
+        background-color: $color-white;
+
+        .item {
+            display: flex;
+            align-items: center;
+            color: $color-primary;
+            margin: 16px 0;
+
+            img{
+                height: 70px;
+                width: 70px;
+                margin: 0 16px;
+
+                object-fit: contain;
+                border-radius: 50%;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                .additional-info{
+                    display: flex;
+                    align-items: center;
+                    color: $color-primary-light;
+                    i{
+                        margin: .4rem;
+                        font-size: .2rem;
+                    }
+                }
+            }
+            .mark{
+                cursor: pointer;
+                padding: 4px;
+                font-size: 2rem;
+                margin-left: auto;
+            }
+        }
+        .item + .item{
+            border-top: $color-gray 1px solid;
+        }
+
+        .old{
+            color: #959595;
+
+            img{
+                filter: invert(.2);
+            }
+            .content{
+                .additional-info{
+                    color: #A5A5A5;
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,37 @@
+$fa-font-path: "../webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./components/buttons";
+//@import "./components/header";
+@import "./components/side-nav";
+@import "./components/form";
+@import "./components/common";
+
+@import "./utils/util-classes";
+
+
+@import "./pages/overview";
+@import "./pages/orders";
+@import "./pages/notifications";
+@import "./pages/details";
+@import "./pages/address-book";
+@import "./pages/change-password";
+@import "./pages/faqs";
+
+
+@import "utils/transitions";
+
+.dashboard-container {
+    @include max-page-size;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 4rem;
+
+    font-family: Poppins, sans-serif;
+}

@@ -11,7 +11,6 @@ class AuctionsController extends Controller
     public function index()
     {
         $auctions = Auction::all();
-
         return view('home', compact('auctions'));
     }
 

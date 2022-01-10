@@ -22,9 +22,13 @@ class ItemsController extends Controller
         //
     }
 
-    public function show(Item $item)
+    public function show($id)
     {
-        return view('item-details', compact('item'));
+        $item = Item::where('id', $id)->withCount('reviews')->withAvg('reviews', 'rating')->withMax('bids', 'price')->first();
+
+        $similarItems = Item::where('category_id', $item->category_id)->limit(5)->get();
+
+        return view('item-details', compact('item', 'similarItems'));
     }
 
     public function edit(Item $item)

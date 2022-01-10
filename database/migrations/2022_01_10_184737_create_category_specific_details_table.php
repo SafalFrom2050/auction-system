@@ -10,8 +10,12 @@ class CreateCategorySpecificDetailsTable extends Migration
     {
         Schema::create('category_specific_details', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('type');
 
-            //
+            $table->bigInteger('category_id')->unsigned()->nullable();
+
+            $table->foreign('category_id')->references('id')->on('categories');
 
             $table->timestamps();
         });

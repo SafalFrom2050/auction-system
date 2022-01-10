@@ -12,6 +12,7 @@ class Item extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+    protected $with = ['additionalDetails', 'category'];
 
     public function reviews(): HasMany
     {
@@ -21,5 +22,20 @@ class Item extends Model
     public function auction(): BelongsTo
     {
         return $this->belongsTo(Auction::class);
+    }
+
+    public function additionalDetails(): HasMany
+    {
+        return $this->hasMany(AdditionalDetail::class);
+    }
+
+    public function bids(): HasMany
+    {
+        return $this->hasMany(Bid::class);
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }

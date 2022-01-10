@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CategorySpecificDetail;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -21,5 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(ItemSeeder::class);
         $this->call(ReviewSeeder::class);
+        $this->call(CategorySpecificDetailSeeder::class);
+        $this->call(AdditionalDetailSeeder::class);
+        $this->call(BidSeeder::class);
+
     }
 }

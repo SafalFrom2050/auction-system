@@ -31,6 +31,7 @@
 
                     @foreach($category->items as $item)
                         <x-product.item-grid-card
+                            :id="$item->id"
                             :image-url="$item->image_url"
                             :heading="$item->title"
                             :ratings="round($item->reviews_avg_rating, 1)"
@@ -39,16 +40,6 @@
                             :expiry-date="$item->auction->end_date->diffForHumans()"
                         />
                     @endforeach
-
-                    <x-product.item-grid-card
-                        image-url="https://picsum.photos/400/300.webp?random=1"
-                        heading="Mid-Atlantic States Spiral Slip Patterned Crimson Earthenware Bowl, 19th Century"
-                        ratings="4.7"
-                        reviews-count="50"
-                        highest-bid="50,000"
-                        expiry-date="5th Jan"
-                    />
-
                 </div>
             </div>
         </div>

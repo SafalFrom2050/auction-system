@@ -1,7 +1,7 @@
 @props(['imageUrl', 'heading', 'ratings', 'reviewsCount', 'highestBid', 'expiryDate', 'id'])
 
 
-<a href="{{route('item.details', ['item' => 1])}}">
+<a href="{{route('item.details', ['item' => $id])}}">
     <div class="p-4 flex flex-col w-72 border border-gray-200 bg-gray-50">
         <img class="h-48 object-cover" src="{{$imageUrl}}" alt="Item Image">
         <div class="flex flex-col w-full mt-2">

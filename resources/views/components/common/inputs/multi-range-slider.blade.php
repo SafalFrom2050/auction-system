@@ -2,8 +2,8 @@
 <style>
     input[type=range]::-webkit-slider-thumb {
         pointer-events: all;
-        width: 12px;
-        height: 12px;
+        width: 24px;
+        height: 24px;
         -webkit-appearance: none;
         /* @apply w-6 h-6 appearance-none pointer-events-auto; */
     }
@@ -16,16 +16,16 @@
                    x-bind:min="min" x-bind:max="max"
                    x-on:input="mintrigger"
                    x-model="minprice"
-                   class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+                   class="absolute pointer-events-none appearance-none z-20 h-3 w-full opacity-0 cursor-pointer">
 
             <input type="range"
                    step="100"
                    x-bind:min="min" x-bind:max="max"
                    x-on:input="maxtrigger"
                    x-model="maxprice"
-                   class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer">
+                   class="absolute pointer-events-none appearance-none z-20 h-3 w-full opacity-0 cursor-pointer">
 
-            <div class="relative z-10 h-2">
+            <div class="relative z-10 h-1">
 
                 <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
 

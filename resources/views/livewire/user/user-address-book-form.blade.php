@@ -9,29 +9,25 @@
         @endif
 
 
-        <x-common.inputs.text name="userAddress.name" label="NAME:" />
+        <x-livewire.inputs.text name="userAddress.name" label="NAME:" />
 
-        <x-common.inputs.text name="userAddress.phone" label="PHONE:" />
+        <x-livewire.inputs.text name="userAddress.phone" label="PHONE:" />
 
-        <x-common.inputs.text name="userAddress.address" label="ADDRESS:" autocomplete="street-address" />
+        <x-livewire.inputs.text name="userAddress.address" label="ADDRESS:" autocomplete="street-address" />
 
-        <x-common.inputs.text name="userAddress.address2" label="ADDRESS 2:" autocomplete="street-address" />
+        <x-livewire.inputs.text name="userAddress.zip_code" label="ZIP CODE:" autocomplete="postal-code" />
 
-        <x-common.inputs.text name="userAddress.zip_code" label="ZIP CODE:" autocomplete="postal-code" />
+        <x-livewire.inputs.checkbox name="userAddress.isDefault" label="SET DEFAULT:" isReadOnly="{{ $hasDefault }}" />
 
-        <x-common.inputs.checkbox name="userAddress.isDefault" label="SET DEFAULT:" isReadOnly="{{ $hasDefault }}" />
+        <x-livewire.inputs.text name="userAddress.province" label="PROVINCE:" autocomplete="province" />
 
-        <x-common.inputs.select name="userAddress.province_id" label="PROVINCE:" :options="$provinces" />
+        <x-livewire.inputs.text name="userAddress.city" label="CITY:" autocomplete="city" />
 
-        <x-common.inputs.select name="userAddress.city_id" label="CITY:" :options="$cities" />
-
-        <x-common.inputs.text name="userAddress.company_name" label="COMPANY:" />
-
-        <x-common.inputs.text name="userAddress.label" label="LABEL:" />
+        <x-livewire.inputs.text name="userAddress.country" label="COUNTRY:" autocomplete="country" />
 
 
         <div>
-            <x-common.inputs.button action="submitForm" value="SAVE CHANGES" />
+            <x-livewire.inputs.button action="submitForm" value="SAVE CHANGES" />
         </div>
     </form>
 

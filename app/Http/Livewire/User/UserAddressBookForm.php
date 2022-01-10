@@ -22,37 +22,28 @@ class UserAddressBookForm extends Component
         'userAddress.name'          => ['required', 'min:2', 'string'],
         'userAddress.phone'         => ['required', 'string', 'min:10', 'max:20'],
         'userAddress.address'       => ['required', 'string', 'min:3'],
-        'userAddress.address2'      => ['string', 'min:3'],
         'userAddress.zip_code'      => ['required', 'min:5', 'max:8'],
         'userAddress.isDefault'     => ['digits_between:0, 1'],
-        'userAddress.province_id'   => ['required', 'exists:default_provinces,id'],
-        'userAddress.city_id'       => ['required', 'exists:default_cities,id'],
-        'userAddress.label'         => ['required', 'string'],
-        'userAddress.company_name'  => ['required', 'string']
+        'userAddress.province'      => ['required', 'min:2', 'string'],
+        'userAddress.city'          => ['required', 'min:2', 'string'],
+        'userAddress.country'       => ['required', 'min:2', 'string'],
     ];
 
     protected $validationAttributes = [
         'userAddress.name'          => 'name',
         'userAddress.phone'         => 'phone',
         'userAddress.address'       => 'address',
-        'userAddress.address2'      => 'address 2',
         'userAddress.zip_code'      => 'zip code',
         'userAddress.isDefault'     => 'set default',
-        'userAddress.province_id'   => 'province',
-        'userAddress.city_id'       => 'city',
-        'userAddress.label'         => 'label',
-        'userAddress.company_name'  => 'company name'
+        'userAddress.province'      => 'province',
+        'userAddress.city'          => 'city',
+        'userAddress.country'       => 'country',
     ];
 
     public $success = false;
 
-    public $provinces;
-    public $cities;
-
     public function mount($addressId): void
     {
-        $this->provinces = DefaultProvinces::all();
-        $this->cities = DefaultCities::all();
 
         if ($addressId){
             $this->userAddress = UserAddress::find($addressId)->toArray();
@@ -100,6 +91,7 @@ class UserAddressBookForm extends Component
                 'type'=>'fail',
                 'content' => 'Error saving address!'
             ];
+            dd($e);
         }
     }
 

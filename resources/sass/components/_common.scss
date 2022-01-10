@@ -1,7 +1,8 @@
 .title-text {
     display: flex;
     flex-direction: column;
-    background-color: $color-white;
+    background-color: $color-gray;
+    border: solid #cccccc 1px;
 
     padding: 2rem 3rem;
     font-size: 1.5rem;

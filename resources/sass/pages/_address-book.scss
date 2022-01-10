@@ -5,7 +5,9 @@
     .form-wrapper{
         margin-top: 1rem;
         flex-grow: 1;
-        background-color: $color-white;
+        background-color: $color-gray;
+        border: solid #cccccc 1px;
+
 
     }
     form{
@@ -13,7 +15,7 @@
     }
 
     .title-text {
-        background-color: $color-white;
+        background-color: $color-gray;
 
         * + * {
             margin-top: 1rem;
@@ -26,7 +28,9 @@
     }
 
     .address-book {
-        background-color: $color-white;
+        background-color: $color-gray;
+        border: solid #cccccc 1px;
+
         display: flex;
         justify-content: space-between;
 
@@ -39,7 +43,7 @@
         .address-list-wrapper {
             display: flex;
             justify-content: space-between;
-            border: solid $color-gray 2px;
+            border: solid #aaaaaa 2px;
             border-style: dashed;
 
             margin: .5rem 0;

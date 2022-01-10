@@ -6157,7 +6157,7 @@ readers do not read off random characters that represent icons */
   outline: inherit;
   color: #222;
   background-color: white;
-  border: solid #eeeeee 2px;
+  border: solid #F3F4F6 2px;
   padding: 0.5rem 3rem;
   font-size: 1rem;
 }
@@ -6169,7 +6169,7 @@ readers do not read off random characters that represent icons */
 .button-outline:disabled,
 .button-outline[disabled] {
   color: #666;
-  border-color: #eeeeee;
+  border-color: #F3F4F6;
   cursor: not-allowed;
 }
 
@@ -6221,14 +6221,13 @@ readers do not read off random characters that represent icons */
   width: -moz-fit-content;
   width: fit-content;
   max-width: 300px;
+  min-width: 250px;
+  border: solid #cccccc 1px;
+  background-color: #F3F4F6;
 }
 .side-nav .account-info {
   display: flex;
   align-items: center;
-  background-color: white;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 1rem 2rem;
   box-sizing: unset;
 }
@@ -6241,7 +6240,7 @@ readers do not read off random characters that represent icons */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #F3F4F6;
   background-color: #222;
   font-size: 2rem;
   border-radius: 50%;
@@ -6263,8 +6262,7 @@ readers do not read off random characters that represent icons */
   padding: 0;
   list-style: none;
   height: 48px;
-  margin: 2px 0;
-  background-color: white;
+  background-color: #F3F4F6;
   width: 100%;
 }
 .side-nav a {
@@ -6308,7 +6306,7 @@ readers do not read off random characters that represent icons */
   margin: unset;
   height: 1px;
   border: none;
-  background-color: #eeeeee;
+  background-color: #F3F4F6;
   width: 80%;
   margin-left: auto;
 }
@@ -6368,7 +6366,8 @@ readers do not read off random characters that represent icons */
 .title-text {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
   padding: 2rem 3rem;
   font-size: 1.5rem;
   margin: unset;
@@ -6433,7 +6432,7 @@ readers do not read off random characters that represent icons */
 }
 
 .alert {
-  border: #eeeeee 2px solid;
+  border: #F3F4F6 2px solid;
   border-style: dashed;
   padding: 1rem 2rem;
 }
@@ -6649,7 +6648,7 @@ readers do not read off random characters that represent icons */
   justify-content: center;
 }
 .order-cards hr {
-  background-color: #eeeeee;
+  background-color: #F3F4F6;
 }
 .order-cards .card-item {
   flex-grow: 1;
@@ -6657,7 +6656,7 @@ readers do not read off random characters that represent icons */
   border-radius: 2px;
   margin: 1rem;
   position: relative;
-  border: solid 1px #eeeeee;
+  border: solid 1px #F3F4F6;
 }
 .order-cards .card-item .status {
   position: absolute;
@@ -6712,11 +6711,11 @@ readers do not read off random characters that represent icons */
   margin: 1rem 0;
 }
 .order-details .order-list {
-  border: solid 2px #eeeeee;
+  border: solid 2px #F3F4F6;
   padding: 1rem 1rem;
 }
 .order-details .order-list .separator-horizontal {
-  background-color: #eeeeee;
+  background-color: #F3F4F6;
 }
 .order-details .order-list .products {
   padding-bottom: 1.5rem;
@@ -6724,7 +6723,7 @@ readers do not read off random characters that represent icons */
 .order-details .order-list .products .heading {
   margin: unset;
   padding-bottom: 1rem;
-  border-bottom: #eeeeee solid 2px;
+  border-bottom: #F3F4F6 solid 2px;
 }
 .order-details .order-list .products .product-item {
   display: flex;
@@ -6785,7 +6784,7 @@ readers do not read off random characters that represent icons */
   margin-left: auto;
 }
 .notifications-section .container .item + .item {
-  border-top: #eeeeee 1px solid;
+  border-top: #F3F4F6 1px solid;
 }
 .notifications-section .container .old {
   color: #959595;
@@ -6802,7 +6801,8 @@ readers do not read off random characters that represent icons */
 }
 .details-section .form-wrapper {
   margin-top: 1rem;
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
 }
 .details-section form {
   width: 100%;
@@ -6822,13 +6822,14 @@ readers do not read off random characters that represent icons */
 .address-section .form-wrapper {
   margin-top: 1rem;
   flex-grow: 1;
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
 }
 .address-section form {
   max-width: 400px;
 }
 .address-section .title-text {
-  background-color: white;
+  background-color: #F3F4F6;
 }
 .address-section .title-text * + * {
   margin-top: 1rem;
@@ -6840,7 +6841,8 @@ readers do not read off random characters that represent icons */
   font-weight: normal;
 }
 .address-section .address-book {
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
   display: flex;
   justify-content: space-between;
   height: -webkit-fit-content;
@@ -6853,7 +6855,7 @@ readers do not read off random characters that represent icons */
 .address-section .address-book .address-list-wrapper {
   display: flex;
   justify-content: space-between;
-  border: solid #eeeeee 2px;
+  border: solid #aaaaaa 2px;
   border-style: dashed;
   margin: 0.5rem 0;
   padding: 1.5rem;
@@ -6891,12 +6893,13 @@ readers do not read off random characters that represent icons */
 
 .change-password-section .form-wrapper {
   margin-top: 1rem;
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
   display: flex;
   flex-direction: column;
 }
 .change-password-section .form-wrapper form {
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .faq-section {
@@ -6932,7 +6935,7 @@ readers do not read off random characters that represent icons */
 }
 .faq-section .categories .disable .label {
   pointer-events: none;
-  border: #eeeeee solid 1px;
+  border: #F3F4F6 solid 1px;
   color: #666;
   cursor: progress;
 }

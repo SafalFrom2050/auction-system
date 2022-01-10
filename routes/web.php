@@ -16,7 +16,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+})->name('home');
+
+Route::prefix('auction')->name('auction.')->group(function () {
+    Route::name('details')->get('{id}', function () {
+        return view('auction-details');
+    });
 });
+
+Route::prefix('item')->name('item.')->group(function () {
+    Route::get('category/{slug}', function () {
+        return view('items-list');
+    })->name('list');
+    Route::get('details', function () {
+        return view('item-details');
+    })->name('details');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

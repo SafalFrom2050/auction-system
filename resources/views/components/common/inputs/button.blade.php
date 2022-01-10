@@ -1,16 +1,7 @@
-@props([
-    'action',
-    'value' => 'SUBMIT',
-    'class' => ''
-])
+@props(['value' => 'Button', 'wClass'=>'', 'class'=>'', 'primary'=>true])
 
-<button
-    wire:click.prevent="{{ $action ?? '' }}"
-    class="button-fill mt-4 font-bold {{$class}}"
-    wire:loading.attr="disabled"
-    wire:target="{{ $action ?? '' }}"
-    {{ $attributes }}
->
-
+<div class="{{$wClass}}">
+<button class="mx-2 my-2 transition duration-150 ease-in-out rounded text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 {{$primary ? 'bg-gray-700 text-white hover:bg-gray-600 px-8 py-3' : 'bg-gray-50 hover:bg-gray-200 border border-gray-500 text-gray-700 px-6 py-2'}} {{$class}}">
     {{ $value }}
 </button>
+</div>

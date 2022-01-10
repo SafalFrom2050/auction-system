@@ -3,7 +3,9 @@
     <div class="container mx-auto relative">
         <div class="py-4 mx-4 md:mx-6">
             <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 py-4">
-                <img src="{{ url("images/logo.jpg") }}" class="h-10" alt="Company Logo"/>
+                <a href="{{route('home')}}">
+                    <img src="{{ url("images/logo.jpg") }}" class="h-10" alt="Company Logo"/>
+                </a>
 
                 <div class="hidden md:block">
                     <ul class="flex items-center space-x-6">
@@ -25,18 +27,11 @@
                     </ul>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">
-                    <a aria-label="my account" href="javascript:void(0)" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded">
+                    <a href="{{route('user.dashboard')}}" aria-label="my account" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded">
                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg2.svg" alt="account">
                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg2dark.svg" alt="account">
                     </a>
-                    <a aria-label="Favourites" href="javascript:void(0)" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg3.svg" alt="Favourites">
-                        <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg3dark.svg" alt="Favourites">
-                    </a>
-                    <a aria-label="Bag" href="javascript:void(0)" class="focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded">
-                        <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg4.svg" alt="bag">
-                        <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg4dark.svg" alt="bag">
-                    </a>
+
                 </div>
 
                 <div class="md:hidden">
@@ -103,30 +98,12 @@
             <div class="w-full h-full flex items-end">
                 <ul class="bg-gray-50 dark:bg-gray-800 py-10 px-4 flex flex-col space-y-8 w-full">
                     <li>
-                        <a class="flex items-center space-x-2 focus:outline-none text-gray-800 dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline" href="javascript:void(0)">
+                        <a href="{{route('user.dashboard')}}" class="flex items-center space-x-2 focus:outline-none text-gray-800 dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline">
                             <div>
                                 <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg2.svg" alt="account">
                                 <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg2dark.svg" alt="account">
                             </div>
                             <p class="text-base">My account</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="flex items-center space-x-2 focus:outline-none text-gray-800 dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline" href="javascript:void(0)">
-                            <div>
-                                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg4.svg" alt="bag">
-                                <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg4dark.svg" alt="bag">
-                            </div>
-                            <p class="text-base">Bag</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline" href="javascript:void(0)">
-                            <div>
-                                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg3.svg" alt="Favourites">
-                                <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-III-svg3dark.svg" alt="Favourites">
-                            </div>
-                            <p class="text-base">Favourites</p>
                         </a>
                     </li>
                 </ul>

@@ -9,21 +9,14 @@
 
                 <div class="hidden md:block">
                     <ul class="flex items-center space-x-6">
-                        <li>
-                            <a href="javascript:void(0)" class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"> New </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"> Men </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"> Women </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"> Kids </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"> Magazine </a>
-                        </li>
+                        @foreach($categories as $category)
+                            <li>
+                                <a href="{{route('category.details', ['category'=>$category->id])}}"
+                                   class="dark:text-white dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    {{ $category->name }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="hidden md:flex items-center space-x-4">

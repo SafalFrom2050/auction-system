@@ -11,10 +11,11 @@ class CreateAuctionsTable extends Migration
         Schema::create('auctions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('heading');
-            $table->string('description');
-            $table->string('imageUrl');
+            $table->text('description');
+            $table->string('image_url');
             $table->string('location');
             $table->dateTime('date_time');
+            $table->dateTime('end_date')->default('2022-08-07');
             $table->string('period');
 
             //

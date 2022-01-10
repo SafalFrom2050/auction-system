@@ -2,13 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Auction;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
-class AuctionSeeder extends Seeder
+class ItemSeeder extends Seeder
 {
     public function run()
     {
-        Auction::factory(10)->create();
+        Item::factory(50)->create();
     }
 }

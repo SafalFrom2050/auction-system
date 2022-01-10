@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Category;
 use Livewire\Component;
 
 class UserNavComponent extends Component
@@ -34,6 +35,8 @@ class UserNavComponent extends Component
 
     public function render()
     {
-        return view('livewire.user.user-nav-component');
+        $categories = Category::all();
+
+        return view('livewire.user.user-nav-component')->layout('layouts.app', compact('categories') );
     }
 }

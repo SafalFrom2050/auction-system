@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuctionsController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ItemsController;
 use App\Http\Livewire\User\UserNavComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -14,23 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [AuctionsController::class, 'index'])->name('home');
 
 Route::prefix('auction')->name('auction.')->group(function () {
-    Route::name('details')->get('{id}', function () {
-        return view('auction-details');
-    });
+    Route::name('details')->get('{auction}', [AuctionsController::class, 'show']);
+});
+
+Route::prefix('category')->name('category.')->group(function () {
+    Route::name('details')->get('{category}', [CategoriesController::class, 'show']);
 });
 
 Route::prefix('item')->name('item.')->group(function () {
     Route::get('category/{slug}', function () {
         return view('items-list');
     })->name('list');
-    Route::get('details', function () {
-        return view('item-details');
-    })->name('details');
+    Route::get('{item}', [ItemsController::class, 'show'])->name('details');
 });
 
 

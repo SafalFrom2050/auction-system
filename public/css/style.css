@@ -6224,6 +6224,7 @@ readers do not read off random characters that represent icons */
   min-width: 250px;
   border: solid #cccccc 1px;
   background-color: #F3F4F6;
+  min-height: 70vh;
 }
 .side-nav .account-info {
   display: flex;
@@ -6905,7 +6906,8 @@ readers do not read off random characters that represent icons */
 .faq-section {
   margin: 1rem auto;
   padding: 2rem;
-  background-color: white;
+  background-color: #F3F4F6;
+  border: solid #cccccc 1px;
 }
 .faq-section .heading {
   margin: unset;

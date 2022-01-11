@@ -17,21 +17,18 @@ class FaqCategoriesComponent extends Component
     public function mount()
     {
         $this->categories = FaqCategory::where('is_parent', 1)
-            ->where('status', 1)
             ->get();
     }
 
     public function selectSubCategory($id)
     {
         $this->selectedSubCategory = FaqCategory::where('id', $id)
-            ->where('status', 1)
             ->get()->first();
     }
 
     public function selectCategory($id)
     {
         $this->selectedCategory = FaqCategory::where('id', $id)
-            ->where('status', 1)
             ->get()->first();
     }
 

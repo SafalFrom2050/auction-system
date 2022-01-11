@@ -1,4 +1,4 @@
-@props(['options', 'name', 'value', 'wClass', 'class'])
+@props(['options', 'name', 'value', 'wClass', 'class', 'selectedIndexes' => []])
 
 <div class="{{ $wClass ?? '' }}">
     @if(count($options) == 1)
@@ -26,7 +26,7 @@
                            type="checkbox"
                            value="{{ $key }}"
                            class="form-checkbox h-3 w-3 text-gray-600 transition duration-150 ease-in-out {{ $class ?? '' }}"
-                           @if(in_array($key, old($name, $value ?? []))) checked="checked" @endif
+                           @if(in_array($key-1, $selectedIndexes)) checked="checked" @endif
                         {{ $attributes }}
                     >
                 </div>

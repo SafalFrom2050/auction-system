@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Models\Auction;
+use App\Models\Category;
 use App\Models\Item;
+use App\Services\ItemService;
 use Illuminate\Http\Request;
 
 class AuctionsController extends Controller
 {
+    private ItemService $itemService;
+
+    public function __construct(ItemService $itemService)
+    {
+        $this->itemService = $itemService;
+    }
+
     public function index()
     {
         $auctions = Auction::all();
@@ -26,9 +36,39 @@ class AuctionsController extends Controller
 
     public function show(Auction $auction)
     {
-        $items = Item::where('auction_id', $auction->id)->withCount('reviews')->withAvg('reviews', 'rating')->get();
+        $items = Item::where('auction_id', $auction->id)->withCount('reviews')->withAvg('reviews', 'rating') ->withMax('bids', 'price')->get();
 
-        return view('auction-details', compact('auction', 'items'));
+        $categories = $this->itemService->getCategoriesWithIdAndName();
+        return view('auction-details', compact('auction', 'items', 'categories'));
+    }
+
+    public function search(SearchRequest $request, Auction $auction)
+    {
+        $searchData = $request->validated();
+        $unfilteredItems = Item::where('auction_id', $auction->id)
+            ->where('title', 'like', '%' . $searchData['query'] . '%' )
+//            ->whereIn('category_id', $searchData['categories'])
+            ->withCount('reviews')->withAvg('reviews', 'rating')
+            ->withMax('bids', 'price')
+            ->get();
+
+        $items = $unfilteredItems->filter(function ($item) use($searchData) {
+            $noError = true;
+            if (isset($searchData['rating'])) {
+                $noError = ($item->reviews_avg_rating >= $searchData['rating']);
+            }
+            if (isset($searchData['price_range_min'])) {
+                $noError = $noError && $item->bids_max_price >= $searchData['price_range_min'];
+            }
+            if (isset($searchData['price_range_max'])) {
+                $noError = $noError && $item->bids_max_price <= $searchData['price_range_max'];
+            }
+
+            return $noError && $item->est_price <= $searchData['price_range_max'];
+        })->values();
+
+        $categories = $this->itemService->getCategoriesWithIdAndName();
+        return view('auction-details', compact('auction', 'items', 'searchData', 'categories'));
     }
 
     public function edit(Auction $auction)

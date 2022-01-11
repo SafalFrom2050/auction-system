@@ -1,17 +1,18 @@
-<!-- component -->
+@props(['name' => '', 'minprice' => 1000, 'maxprice' => 7000])
+
 <style>
     input[type=range]::-webkit-slider-thumb {
         pointer-events: all;
         width: 24px;
         height: 24px;
         -webkit-appearance: none;
-        /* @apply w-6 h-6 appearance-none pointer-events-auto; */
     }
 </style>
 <div class="flex justify-center items-center">
     <div x-data="range()" x-init="mintrigger(); maxtrigger()" class="relative max-w-xl w-full">
         <div>
             <input type="range"
+                   name="{{$name}}.min"
                    step="100"
                    x-bind:min="min" x-bind:max="max"
                    x-on:input="mintrigger"
@@ -19,6 +20,7 @@
                    class="absolute pointer-events-none appearance-none z-20 h-3 w-full opacity-0 cursor-pointer">
 
             <input type="range"
+                   name="{{$name}}.max"
                    step="100"
                    x-bind:min="min" x-bind:max="max"
                    x-on:input="maxtrigger"
@@ -60,10 +62,10 @@
     <script>
         function range() {
             return {
-                minprice: 1000,
-                maxprice: 7000,
+                minprice: {{$minprice}},
+                maxprice: {{$maxprice}},
                 min: 100,
-                max: 10000,
+                max: 1000000,
                 minthumb: 0,
                 maxthumb: 0,
 

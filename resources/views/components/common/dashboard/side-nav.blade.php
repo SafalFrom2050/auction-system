@@ -13,16 +13,9 @@
             </li>
 
             <li>
-                <a wire:click.="setActiveNav('notifications')" class={{ $active == 'notifications' ? 'active' : '' }}>
-                    <i class="far fa-bell"></i>
-                    Notifications
-                </a>
-            </li>
-
-            <li>
-                <a wire:click.="setActiveNav('orders')" class={{ $active == 'orders' ? 'active' : '' }}>
-                    <i class="far fa-basket-shopping"></i>
-                    My orders
+                <a wire:click.="setActiveNav('bids')" class={{ $active == 'bids' ? 'active' : '' }}>
+                    <i class="fas fa-shopping-bag"></i>
+                    My bids
                 </a>
             </li>
 
@@ -61,15 +54,6 @@
                            class={{ $active == 'change-password' ? 'active' : '' }}>
                             <i class="far fa-edit"></i>
                             Change password
-                        </a>
-                    </li>
-                    <hr/>
-
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-messages-question"></i>
-                            Payment
-                            method
                         </a>
                     </li>
                 </ul>

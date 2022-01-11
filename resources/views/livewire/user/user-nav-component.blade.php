@@ -15,8 +15,8 @@
             <livewire:user.user-notifications-component :key="2"/>
             @break
 
-            @case('orders')
-            <livewire:user.user-orders-component :key="3"/>
+            @case('bids')
+            <livewire:user.user-bids-component :key="3"/>
             @break
 
             @case('details')

@@ -1,10 +1,7 @@
 <div>
     <h2 class="title-text">
-        <img
-            src="/svgs/circle-fill.svg"
-            class="w-4 h-4 mb-2"
-            alt="circle icon"
-        />
+
+        <i class="fas fa-question mb-2"></i>
         FAQS
 
         @if($selectedSubCategory)
@@ -40,8 +37,7 @@
                     <div class="category-item" wire:loading.class="disable" wire:target="expandId({{ $category->id }})">
                         <div class="label" wire:click="expandId({{ $category->id }})">
                             <span>{{ $category->name }}</span>
-                            <img class="arrow {{$expandedId == $category->id ? 'rotate-90' : 'rotate-0'}}"
-                                 src="/svgs/arrow-right.svg" alt="Go"/>
+                            <i class="fas fa-arrow-right {{$expandedId == $category->id ? 'rotate-90' : 'rotate-0'}}"></i>
                         </div>
 
                         <div class="sub-categories {{$expandedId == $category->id ? 'expand' : 'collapse'}}">

@@ -15,15 +15,16 @@ class UserDetailsComponent extends Component
     public $message;
 
 
-    public $rules = [
+    public array $rules = [
         'user.name' => ['required', 'string', 'min:2', 'max:100'],
-        'user.phone' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10'],
+        'user.phone' => ['nullable', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10'],
         'user.dob' => ['required', 'date'],
         'user.email' => ['required', 'email'],
-        'user.profile_photo_path' => ['nullable', 'url'],
+        'user.bank_account_no' => ['nullable', 'min:16'],
+        'user.bank_sort_code' => ['nullable', 'min:4']
     ];
 
-    protected $validationAttributes = [
+    protected array $validationAttributes = [
         'user.name' => 'name',
         'user.email' => 'email address',
         'user.profile_photo_path' => 'profile photo'

@@ -27,35 +27,17 @@
             <input wire:model.lazy="user.dob" type="date" id="dob" name="dob"/>
             <x-common.error-msg name="user.dob"/>
 
-            <label for="phone">PHONE:</label>
+            <label for="tel">PHONE:</label>
             <input wire:model.lazy="user.phone" type="text" id="tel" name="user.phone"/>
             <x-common.error-msg name="user.phone"/>
 
-{{--            <div class="mt-1">--}}
-{{--                <label>MOSTLY INTERESTED IN:</label>--}}
-{{--                <div class="mt-2 flex-row">--}}
-{{--                    <label for="radio">--}}
-{{--                        <input--}}
-{{--                            type="radio"--}}
-{{--                            id="radio"--}}
-{{--                            name="interested-in"--}}
-{{--                            value="Womenswear"--}}
-{{--                        />--}}
-{{--                        Womenswear--}}
-{{--                    </label>--}}
+            <label for="bank_account_no">BANK ACCOUNT NUMBER:</label>
+            <input wire:model.lazy="user.bank_account_no" type="text" id="bank_account_no" name="user.bank_account_no"/>
+            <x-common.error-msg name="user.bank_account_no"/>
 
-{{--                    <hr class="separator-vertical"/>--}}
-{{--                    <label for="radio-2">--}}
-{{--                        <input--}}
-{{--                            type="radio"--}}
-{{--                            id="radio-2"--}}
-{{--                            name="interested-in"--}}
-{{--                            value="Menswear"--}}
-{{--                        />--}}
-{{--                        Menswear--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <label for="bank_sort_code">BANK SORT CODE:</label>
+            <input wire:model.lazy="user.bank_sort_code" type="text" id="bank_sort_code" name="user.bank_sort_code"/>
+            <x-common.error-msg name="user.bank_sort_code"/>
 
             <button wire:click.prevent="saveUser" class="button-fill mt-4 font-bold">SAVE CHANGES</button>
         </form>

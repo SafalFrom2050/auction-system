@@ -20,11 +20,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuctionsController::class, 'index'])->name('home');
 
 Route::prefix('auction')->name('auction.')->group(function () {
-    Route::name('details')->get('{auction}', [AuctionsController::class, 'show']);
+    Route::get('{auction}', [AuctionsController::class, 'show'])->name('details');
+    Route::get('{auction}/search', [AuctionsController::class, 'search'])->name('search');
 });
 
 Route::prefix('category')->name('category.')->group(function () {
-    Route::name('details')->get('{category}', [CategoriesController::class, 'show']);
+    Route::get('{category}', [CategoriesController::class, 'show'])->name('details');
+    Route::get('{category}/search', [CategoriesController::class, 'search'])->name('search');
 });
 
 Route::prefix('item')->name('item.')->group(function () {
@@ -32,6 +34,9 @@ Route::prefix('item')->name('item.')->group(function () {
         return view('items-list');
     })->name('list');
     Route::get('{item}', [ItemsController::class, 'show'])->name('details');
+    Route::post('{item}/bid', [ItemsController::class, 'bid'])->name('bid');
+    Route::post('{item}/rate', [ItemsController::class, 'rate'])->name('rate');
+
 });
 
 

@@ -10,11 +10,15 @@ class CreateBidsTable extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('price');
+
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('item_id')->unsigned()->nullable();
 
-
+            $table->boolean('status')->default(1);
+            $table->integer('price');
+            $table->integer('commission');
+            $table->integer('tax_amount');
+            $table->integer('total_price');
             $table->foreign('item_id')->references('id')->on('items');
             $table->foreign('user_id')->references('id')->on('users');
 

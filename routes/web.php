@@ -53,4 +53,11 @@ Route::middleware(['auth'])->prefix('user')
 
     });
 
+
+Route::prefix('admin')->name('admin.')->middleware('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('index');
+});
+
 require __DIR__.'/auth.php';

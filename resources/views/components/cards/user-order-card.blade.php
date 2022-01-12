@@ -17,6 +17,6 @@
 
     <div class="buttons">
         <button wire:click="setBidId({{$id}})" class="button-outline">View Details</button>
-        <button class="button-outline cancel">Cancel Bid</button>
+        <button wire:click="cancelBid({{$id}})" class="button-outline cancel">Cancel Bid</button>
     </div>
 </div>

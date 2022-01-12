@@ -17,11 +17,14 @@ class CreateItemsTable extends Migration
             $table->string('title');
             $table->string('est_price');
             $table->text('description');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
 
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->bigInteger('auction_id')->unsigned()->nullable();
+            $table->bigInteger('seller_id')->unsigned()->nullable();
 
+
+            $table->foreign('seller_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('auction_id')->references('id')->on('auctions');
 

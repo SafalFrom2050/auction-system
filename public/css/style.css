@@ -6453,8 +6453,6 @@ readers do not read off random characters that represent icons */
   transform: translate(-50%, -50%);
   height: 48px;
   width: 48px;
-  background: url("/svgs/spinner.svg") no-repeat;
-  background-size: contain;
   -webkit-animation: anim-rotate 0.5s ease-in-out infinite;
           animation: anim-rotate 0.5s ease-in-out infinite;
 }

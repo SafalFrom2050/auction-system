@@ -19,6 +19,20 @@
                 </a>
             </li>
 
+            @if(auth()->user()->client_type == 'seller' || auth()->user()->client_type == 'joint')
+                <hr/>
+                <p class="mx-4 text-xs mt-2 text-gray-600">Seller Controls</p>
+                @can('edit', \App\Models\Item::class)
+                    <li>
+                        <a wire:click.="setActiveNav('seller.items-list')" class={{ $active == 'seller.items-list' ? 'active' : '' }}>
+                            <i class="fas fa-shopping-bag"></i>
+                            Manage Items
+                        </a>
+                    </li>
+                @endcan
+                <hr/>
+            @endif
+
             <li class="group">
                 <ul>
                     <li>

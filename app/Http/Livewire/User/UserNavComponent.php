@@ -13,7 +13,6 @@ class UserNavComponent extends Component
     protected $listeners = ['userDetailsChanged'];
 
     public function mount($navLink = ''){
-
         $this->username = auth()->user()->name;
 
         if($navLink){

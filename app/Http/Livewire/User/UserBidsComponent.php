@@ -28,8 +28,12 @@ class UserBidsComponent extends Component
         unset($this->bidId);
     }
 
-    public function cancelBid(){
-        Bid::where('id', $this->bidId)->first()->delete();
+    public function cancelBid($bidId=null){
+        if (!$bidId) {
+            $bidId = $this->bidId;
+        }
+
+        Bid::where('id', $bidId)->first()->delete();
         $this->showList();
     }
 

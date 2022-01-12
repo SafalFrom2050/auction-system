@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
         User::factory(1)->create(['email' => 'aa@aa.aa', 'password' => bcrypt('pass'), 'client_type' => 'joint', 'is_approved' => true]);
+        User::factory(10)->create();
 
         $this->call(AdminSeeder::class);
         $this->call(AuctionSeeder::class);

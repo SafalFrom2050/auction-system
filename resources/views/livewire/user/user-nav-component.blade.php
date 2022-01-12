@@ -38,6 +38,10 @@
             @default
             <livewire:user.user-dashboard-component :key="8"/>
             @break
+
+            @case('seller.items-list')
+            <livewire:seller.seller-items-list-component :key="9"/>
+            @break
         @endswitch
     </div>
 

@@ -10,6 +10,19 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController as AdminAuthenticatedSessionController;
+
+Route::prefix('admin')->name('admin.')->middleware('admin.guest')->group(function () {
+    Route::get('/login', [AdminAuthenticatedSessionController::class, 'create'])
+        ->name('login');
+
+    Route::post('/login', [AdminAuthenticatedSessionController::class, 'store']);
+});
+
+Route::post('/admin/logout', [AdminAuthenticatedSessionController::class, 'destroy'])
+    ->middleware('admin')
+    ->name('admin.logout');
+
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');

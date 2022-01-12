@@ -19,7 +19,8 @@ class CreateBidsTable extends Migration
             $table->integer('commission');
             $table->integer('tax_amount');
             $table->integer('total_price');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('item_id')->references('id')->on('items')
+                ->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->timestamps();

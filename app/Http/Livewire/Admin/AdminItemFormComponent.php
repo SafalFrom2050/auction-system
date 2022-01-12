@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Seller;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\Auction;
 use App\Models\Category;
@@ -8,7 +8,7 @@ use App\Models\Item;
 use App\Services\ItemService;
 use Livewire\Component;
 
-class SellerItemFormComponent extends Component
+class AdminItemFormComponent extends Component
 {
     public $message;
 
@@ -29,7 +29,7 @@ class SellerItemFormComponent extends Component
         'item.description'          => ['required', 'min:2', 'string'],
         'item.category_id'      => ['required'],
         'item.auction_id'      => ['required']
-        ];
+    ];
 
     protected $validationAttributes = [
         'item.title'          => 'title',
@@ -74,7 +74,6 @@ class SellerItemFormComponent extends Component
     public function save(): void
     {
         $validatedData = $this->validate()['item'];
-        $validatedData['seller_id'] = auth()->id();
 
         Item::create($validatedData);
         $this->success = true;
@@ -94,6 +93,6 @@ class SellerItemFormComponent extends Component
 
     public function render()
     {
-        return view('livewire.seller.seller-item-form-component');
+        return view('livewire.admin.admin-item-form-component');
     }
 }

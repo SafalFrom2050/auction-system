@@ -18,15 +18,17 @@ class CreateItemsTable extends Migration
             $table->string('est_price');
             $table->text('description');
             $table->string('image_url')->nullable();
+            $table->boolean('is_approved')->default(true);
 
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->bigInteger('auction_id')->unsigned()->nullable();
             $table->bigInteger('seller_id')->unsigned()->nullable();
 
 
-            $table->foreign('seller_id')->references('id')->on('users');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->foreign('auction_id')->references('id')->on('auctions');
+            $table->foreign('seller_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
+            $table->foreign('auction_id')->references('id')->on('auctions')
+                ->onDelete('CASCADE')->onUpdate('CASCADE');
 
             $table->timestamps();
         });

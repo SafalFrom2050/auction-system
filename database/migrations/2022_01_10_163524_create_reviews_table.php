@@ -16,7 +16,8 @@ class CreateReviewsTable extends Migration
             $table->bigInteger('item_id')->unsigned()->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('item_id')->references('id')->on('items')
+                ->onDelete('CASCADE')->onUpdate('CASCADE');
             //
 
             $table->timestamps();

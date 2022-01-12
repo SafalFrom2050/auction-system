@@ -16,7 +16,8 @@ class CreateAdditionalDetailsTable extends Migration
             $table->bigInteger('item_id')->unsigned()->nullable();
 
             $table->foreign('category_specific_detail_id')->references('id')->on('category_specific_details');
-            $table->foreign('item_id')->references('id')->on('items');
+            $table->foreign('item_id')->references('id')->on('items')
+                ->onDelete('CASCADE')->onUpdate('CASCADE');
 
             $table->timestamps();
         });

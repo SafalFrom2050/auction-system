@@ -12,12 +12,12 @@ class CreateAuctionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('heading');
             $table->text('description');
-            $table->string('image_url');
+            $table->string('image_url')->nullable();
             $table->string('location');
             $table->dateTime('date_time');
             $table->dateTime('end_date')->default('2022-08-07');
             $table->string('period');
-
+            $table->string('status')->default('open');
             //
 
             $table->timestamps();

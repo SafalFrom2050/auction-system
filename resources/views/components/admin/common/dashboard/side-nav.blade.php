@@ -14,15 +14,22 @@
 
             <li>
                 <a wire:click="setActiveNav('auctions')" class={{ $active == 'auctions' ? 'active' : '' }}>
-                    <i class="far fa-user"></i>
+                    <i class="fas fa-layer-group"></i>
                     Manage Auctions
                 </a>
             </li>
 
             <li>
                 <a wire:click="setActiveNav('items')" class={{ $active == 'items' ? 'active' : '' }}>
-                    <i class="far fa-user"></i>
+                    <i class="fas fa-sitemap"></i>
                     Manage Items
+                </a>
+            </li>
+
+            <li>
+                <a wire:click="setActiveNav('users')" class={{ $active == 'users' ? 'active' : '' }}>
+                    <i class="fas fa-user-friends"></i>
+                    Manage Users
                 </a>
             </li>
 
@@ -43,6 +50,13 @@
                            class={{ $active == 'change-password' ? 'active' : '' }}>
                             <i class="far fa-edit"></i>
                             Change password
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('admin.logout')}}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
                         </a>
                     </li>
                 </ul>

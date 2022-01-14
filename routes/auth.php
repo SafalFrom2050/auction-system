@@ -19,7 +19,7 @@ Route::prefix('admin')->name('admin.')->middleware('admin.guest')->group(functio
     Route::post('/login', [AdminAuthenticatedSessionController::class, 'store']);
 });
 
-Route::post('/admin/logout', [AdminAuthenticatedSessionController::class, 'destroy'])
+Route::get('/admin/logout', [AdminAuthenticatedSessionController::class, 'destroy'])
     ->middleware('admin')
     ->name('admin.logout');
 
@@ -72,6 +72,6 @@ Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store'])
                 ->middleware('auth');
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');

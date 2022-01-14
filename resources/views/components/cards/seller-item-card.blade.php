@@ -9,13 +9,18 @@
     'description',
     'imageUrl',
     'category',
-    'expiryDate'
+    'expiryDate',
+    'status',
+    'bidsMaxPrice'
 ])
 
 <div class="address-list-wrapper">
     <div class="flex-column">
         <div class="address-list gap-y-2">
             <h3 class="heading">{{ $title }}</h3>
+            <h4 class="text-gray-400 text-lg my-2">Status: <span class="text-gray-800">{{$status}}</span></h4>
+            <h5 class="text-gray-400 my-2">Max Bid Amount: <span class="text-gray-800">Rs. {{ number_format($bidsMaxPrice) }}</span></h5>
+
             <p class="text-gray-400 my-2">Lot Number: <span class="text-gray-800">{{($lotNo) ?? '--'}}</span></p>
             <p class="text-gray-400 my-2">Artist: <span class="text-gray-800">{{ucfirst($artist)}}</span></p>
             <p class="text-gray-400 my-2">Classification: <span class="text-gray-800">{{ucfirst($classification)}}</span></p>

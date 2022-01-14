@@ -19,6 +19,11 @@
             <livewire:admin.admin-items-list-component :key="2"/>
             @break
 
+            @case('users')
+            <livewire:admin.admin-user-list-component :key="3"/>
+            @break
+
+
             @default
 {{--            <livewire:user.user-dashboard-component :key="8"/>--}}
             @break

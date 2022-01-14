@@ -22,7 +22,7 @@ class AdminItemsListComponent extends Component
     }
     public function showList(){
         $this->showForm = false;
-        $this->items = Item::orderBy('created_at', 'desc')->get();
+        $this->items = Item::orderBy('updated_at', 'desc')->withMax('bids', 'price')->get();
     }
     public function added(){
         $this->showForm = false;

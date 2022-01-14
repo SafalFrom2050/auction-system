@@ -38,6 +38,7 @@
                         category="{{ $item->category->name }}"
                         is-approved="{{$item->is_approved}}"
                         expiryDate="{{ $item->auction->end_date->format('y/m/d H:i A') }}"
+                        :bids-max-price="$item->bids_max_price"
                     />
 
                 @endforeach

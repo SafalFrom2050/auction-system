@@ -37,6 +37,8 @@
                         imageUrl="{{ $item->image_url }}"
                         category="{{ $item->category->name }}"
                         expiryDate="{{ $item->auction->end_date->format('y/m/d H:i A') }}"
+                        :status="$item->is_approved ? 'Approved' : 'Waiting'"
+                        :bids-max-price="$item->bids_max_price"
                     />
 
                 @endforeach

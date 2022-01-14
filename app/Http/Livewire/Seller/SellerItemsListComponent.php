@@ -50,7 +50,8 @@ class SellerItemsListComponent extends Component
 
     public function showList(){
         $this->showForm = false;
-        $this->items = auth()->user()->items;
+        $this->items = Item::orderBy('updated_at', 'desc')->where('seller_id', auth()->id())
+            ->withMax('bids', 'price')->get();
     }
 
     public function render()

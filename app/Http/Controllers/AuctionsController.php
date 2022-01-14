@@ -20,7 +20,7 @@ class AuctionsController extends Controller
 
     public function index()
     {
-        $auctions = Auction::all();
+        $auctions = Auction::where('status', 'open')->get();
         return view('home', compact('auctions'));
     }
 
@@ -36,7 +36,9 @@ class AuctionsController extends Controller
 
     public function show(Auction $auction)
     {
-        $items = Item::where('auction_id', $auction->id)->withCount('reviews')->withAvg('reviews', 'rating') ->withMax('bids', 'price')->get();
+        $items = Item::where('auction_id', $auction->id)->where('is_approved', true)
+            ->withCount('reviews')->withAvg('reviews', 'rating')
+            ->withMax('bids', 'price')->get();
 
         $categories = $this->itemService->getCategoriesWithIdAndName();
         return view('auction-details', compact('auction', 'items', 'categories'));
@@ -45,7 +47,7 @@ class AuctionsController extends Controller
     public function search(SearchRequest $request, Auction $auction)
     {
         $searchData = $request->validated();
-        $unfilteredItems = Item::where('auction_id', $auction->id)
+        $unfilteredItems = Item::where('auction_id', $auction->id)->where('is_approved', true)
             ->where('title', 'like', '%' . $searchData['query'] . '%' )
 //            ->whereIn('category_id', $searchData['categories'])
             ->withCount('reviews')->withAvg('reviews', 'rating')

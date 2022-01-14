@@ -35,7 +35,7 @@ class CategoriesController extends Controller
     public function show($id)
     {
         $category = Category::where('id', $id)->first();
-        $items = Item::where('category_id', $category->id)
+        $items = Item::where('category_id', $category->id)->where('is_approved', true)
             ->withCount('reviews')->withAvg('reviews', 'rating')
             ->withMax('bids', 'price')
             ->get();
@@ -46,7 +46,7 @@ class CategoriesController extends Controller
     public function search(SearchRequest $request, Category $category)
     {
         $searchData = $request->validated();
-        $unfilteredItems = Item::where('category_id', $category->id)
+        $unfilteredItems = Item::where('category_id', $category->id)->where('is_approved', true)
             ->where('title', 'like', '%' . $searchData['query'] . '%' )
 //            ->whereIn('category_id', $searchData['categories'])
             ->withCount('reviews')->withAvg('reviews', 'rating')
